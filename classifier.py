@@ -68,35 +68,32 @@ def extract_features(mail_dir):
             train_labels[docID] = 1;
             count = count + 1
         docID = docID + 1
-    print('hifeaturesmatrix', features_matrix)
-    print('trainlabels', train_labels)
     return features_matrix, train_labels
 
 
 
-TRAIN_DIR = [FOLDER_PATH]
-TEST_DIR = [FOLDER_PATH]
+TRAIN_DIR = 'E://CodingProjects//SPAMSVM//train-mails'
+TEST_DIR = 'E://CodingProjects//SPAMSVM//Newspam'
 
 dictionary = make_Dictionary(TRAIN_DIR)
 
 print("reading and processing emails from file.")
 
 # features_matrix, train_labels = extract_features(TRAIN_DIR)
-# test_feature_matrix, test_labels = extract_features(TEST_DIR)
-features_matrix = load([FILE_PATH])
-train_labels = load([FILE_PATH])
-test_feature_matrix = load([FILE_PATH])
-test_labels = load([FILE_PATH])
+test_feature_matrix, test_labels = extract_features(TEST_DIR)
+print(test_feature_matrix, 'testing')
+features_matrix = load("E://CodingProjects//SPAMSVM//code//temp//features_matrix.txt")
+train_labels = load("E://CodingProjects//SPAMSVM//code//temp//train_labels.txt")
+# test_feature_matrix = load("E://CodingProjects//SPAMSVM//code//temp//test_feature_matrix.txt")
+# test_labels = load("E://CodingProjects//SPAMSVM//code//temp//test_labels.txt")
 
 # features_matrix = features_matrix[:len(features_matrix)//10]
 # train_labels = train_labels[:len(train_labels)//10]
 
-print(train_labels, 'newww')
-
-save([FILE_PATH], features_matrix)
-save([FILE_PATH], train_labels)
-save([FILE_PATH], test_feature_matrix)
-save([FILE_PATH], test_labels)
+save("E://CodingProjects//SPAMSVM//code//temp//features_matrix.txt", features_matrix)
+save("E://CodingProjects//SPAMSVM//code//temp//train_labels.txt", train_labels)
+save("E://CodingProjects//SPAMSVM//code//temp//test_feature_matrix.txt", test_feature_matrix)
+save("E://CodingProjects//SPAMSVM//code//temp//test_labels.txt", test_labels)
 
 model = svm.SVC(kernel="rbf", C = 1)
 print("Training model.")
@@ -105,5 +102,12 @@ model.fit(features_matrix, train_labels)
 
 predicted_labels = model.predict(test_feature_matrix)
 
-print("FINISHED classifying. accuracy score : ")
-print(accuracy_score(test_labels, predicted_labels))
+for i in range(len(predicted_labels)):
+    if predicted_labels[i] == 1:
+        print([i], 'yes it is spam')
+    elif predicted_labels[i] == 0:
+        print([i], "Not Spam")
+    else: print([i], 'Unable to detect')
+
+# print("FINISHED classifying. accuracy score : ")
+# print(accuracy_score(test_labels, predicted_labels))
