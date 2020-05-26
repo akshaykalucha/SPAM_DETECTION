@@ -72,7 +72,7 @@ def extract_features(mail_dir):
 
 
 
-TRAIN_DIR = 'E://CodingProjects//SPAMSVM//train-mails'
+TRAIN_DIR = {location}
 TEST_DIR = 'E://CodingProjects//SPAMSVM//Newspam'
 
 dictionary = make_Dictionary(TRAIN_DIR)
