@@ -93,7 +93,7 @@ train_labels = load("E://CodingProjects//SPAMSVM//code//temp//train_labels.txt")
 save({location}, features_matrix)
 save({location}, train_labels)
 save({location}, test_feature_matrix)
-save("E://CodingProjects//SPAMSVM//code//temp//test_labels.txt", test_labels)
+save({locals}, test_labels)
 
 model = svm.SVC(kernel="rbf", C = 1)
 print("Training model.")
