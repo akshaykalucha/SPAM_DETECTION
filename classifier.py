@@ -84,7 +84,7 @@ test_feature_matrix, test_labels = extract_features(TEST_DIR)
 print(test_feature_matrix, 'testing')
 features_matrix = load({location})
 train_labels = load({location})
-# test_feature_matrix = load("E://CodingProjects//SPAMSVM//code//temp//test_feature_matrix.txt")
+# test_feature_matrix = load({location})
 # test_labels = load("E://CodingProjects//SPAMSVM//code//temp//test_labels.txt")
 
 # features_matrix = features_matrix[:len(features_matrix)//10]
