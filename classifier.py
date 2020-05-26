@@ -91,7 +91,7 @@ train_labels = load("E://CodingProjects//SPAMSVM//code//temp//train_labels.txt")
 # train_labels = train_labels[:len(train_labels)//10]
 
 save({location}, features_matrix)
-save("E://CodingProjects//SPAMSVM//code//temp//train_labels.txt", train_labels)
+save({location}, train_labels)
 save("E://CodingProjects//SPAMSVM//code//temp//test_feature_matrix.txt", test_feature_matrix)
 save("E://CodingProjects//SPAMSVM//code//temp//test_labels.txt", test_labels)
 
