@@ -29,7 +29,18 @@ def make_Dictionary(root_dir):
         with open(mail) as m:
             for line in m:
                 words = line.split()
+                all_words += words
+    dictionary = Counter(all_words)
+    list_to_remove = list(dictionary)
 
+    for item in list_to_remove:
+        if item.isalpha() == False:
+            del dictionary[item]
+        elif len(item) == 1:
+            del dictionary[item]
+    dictionary = dictionary.most_common(3000)
+
+    return dictionary
 
 
 
