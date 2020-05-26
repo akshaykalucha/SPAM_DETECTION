@@ -72,8 +72,8 @@ def extract_features(mail_dir):
 
 
 
-TRAIN_DIR = 'E://CodingProjects//SPAMSVM//train-mails'
-TEST_DIR = 'E://CodingProjects//SPAMSVM//Newspam'
+# TRAIN_DIR = 'E://CodingProjects//SPAMSVM//train-mails'
+# TEST_DIR = 'E://CodingProjects//SPAMSVM//Newspam'
 
 dictionary = make_Dictionary(TRAIN_DIR)
 
