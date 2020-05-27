@@ -51,20 +51,7 @@ def extract_features(mail_dir):
     count = 0;
     docID = 0;
     for fil in files:
-      with open(fil) as fi:
-        for i,line in enumerate(fi):
-          if i == 2:
-            words = line.split()
-            for word in words:
-              wordID = 0
-              for i,d in enumerate(dictionary):
-                if d[0] == word:
-                  wordID = i
-                  features_matrix[docID,wordID] = words.count(word)
-        train_labels[docID] = 0;
-        filepathTokens = fil.split('/')
-        lastToken = filepathTokens[len(filepathTokens) - 1]
-        if lastToken.__contains__("spmsg"):
+
             train_labels[docID] = 1;
             count = count + 1
         docID = docID + 1
