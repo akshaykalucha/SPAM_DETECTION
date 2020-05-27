@@ -72,8 +72,8 @@ def extract_features(mail_dir):
 
 
 
-TRAIN_DIR = {location}
-TEST_DIR = {location}
+TRAIN_DIR = 'E://CodingProjects//SPAMSVM//train-mails'
+TEST_DIR = 'E://CodingProjects//SPAMSVM//Newspam'
 
 dictionary = make_Dictionary(TRAIN_DIR)
 
@@ -82,18 +82,18 @@ print("reading and processing emails from file.")
 # features_matrix, train_labels = extract_features(TRAIN_DIR)
 test_feature_matrix, test_labels = extract_features(TEST_DIR)
 print(test_feature_matrix, 'testing')
-features_matrix = load({location})
-train_labels = load({location})
-# test_feature_matrix = load({location})
-# test_labels = load({location})
+features_matrix = load("E://CodingProjects//SPAMSVM//code//temp//features_matrix.txt")
+train_labels = load("E://CodingProjects//SPAMSVM//code//temp//train_labels.txt")
+# test_feature_matrix = load("E://CodingProjects//SPAMSVM//code//temp//test_feature_matrix.txt")
+# test_labels = load("E://CodingProjects//SPAMSVM//code//temp//test_labels.txt")
 
 # features_matrix = features_matrix[:len(features_matrix)//10]
 # train_labels = train_labels[:len(train_labels)//10]
 
-save({location}, features_matrix)
-save({location}, train_labels)
-save({location}, test_feature_matrix)
-save({locals}, test_labels)
+save("E://CodingProjects//SPAMSVM//code//temp//features_matrix.txt", features_matrix)
+save("E://CodingProjects//SPAMSVM//code//temp//train_labels.txt", train_labels)
+save("E://CodingProjects//SPAMSVM//code//temp//test_feature_matrix.txt", test_feature_matrix)
+save("E://CodingProjects//SPAMSVM//code//temp//test_labels.txt", test_labels)
 
 model = svm.SVC(kernel="rbf", C = 1)
 print("Training model.")
