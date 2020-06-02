@@ -44,13 +44,13 @@ def make_Dictionary(root_dir):
 
 
 
-def extract_features(mail_dir):
-    files = [os.path.join(mail_dir,fi) for fi in os.listdir(mail_dir)]
-    features_matrix = np.zeros((len(files),3000))
-    train_labels = np.zeros(len(files))
-    count = 0;
-    docID = 0;
-    for fil in files:
+# def extract_features(mail_dir):
+#     files = [os.path.join(mail_dir,fi) for fi in os.listdir(mail_dir)]
+#     features_matrix = np.zeros((len(files),3000))
+#     train_labels = np.zeros(len(files))
+#     count = 0;
+#     docID = 0;
+#     for fil in files:
       with open(fil) as fi:
         for i,line in enumerate(fi):
           if i == 2:
