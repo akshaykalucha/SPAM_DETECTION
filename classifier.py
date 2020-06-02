@@ -7,12 +7,12 @@ from sklearn.metrics import accuracy_score
 import pickle as cPickle
 import gzip
 
-# def load(file_name):
-#     # load the model
-#     stream = gzip.open(file_name, "rb")
-#     model = cPickle.load(stream)
-#     stream.close()
-#     return model
+def load(file_name):
+    # load the model
+    stream = gzip.open(file_name, "rb")
+    model = cPickle.load(stream)
+    stream.close()
+    return model
 
 
 def save(file_name, model):
