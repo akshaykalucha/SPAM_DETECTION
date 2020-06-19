@@ -100,14 +100,7 @@ print("Training model.")
 #train model
 model.fit(features_matrix, train_labels)
 
-predicted_labels = model.predict(test_feature_matrix)
 
-for i in range(len(predicted_labels)):
-    if predicted_labels[i] == 1:
-        print([i], 'yes it is spam')
-    elif predicted_labels[i] == 0:
-        print([i], "Not Spam")
-    else: print([i], 'Unable to detect')
 
 # print("FINISHED classifying. accuracy score : ")
 # print(accuracy_score(test_labels, predicted_labels))
