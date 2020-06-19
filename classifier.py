@@ -81,7 +81,9 @@ print("reading and processing emails from file.")
 
 # features_matrix, train_labels = extract_features(TRAIN_DIR)
 test_feature_matrix, test_labels = extract_features(TEST_DIR)
-
+print(test_feature_matrix, 'testing')
+features_matrix = load("E://CodingProjects//SPAMSVM//code//temp//features_matrix.txt")
+train_labels = load("E://CodingProjects//SPAMSVM//code//temp//train_labels.txt")
 # test_feature_matrix = load("E://CodingProjects//SPAMSVM//code//temp//test_feature_matrix.txt")
 # test_labels = load("E://CodingProjects//SPAMSVM//code//temp//test_labels.txt")
 
