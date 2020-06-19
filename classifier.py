@@ -90,10 +90,10 @@ train_labels = load("E://CodingProjects//SPAMSVM//code//temp//train_labels.txt")
 # features_matrix = features_matrix[:len(features_matrix)//10]
 # train_labels = train_labels[:len(train_labels)//10]
 
-save("E://CodingProjects//SPAMSVM//code//temp//features_matrix.txt", features_matrix)
-save("E://CodingProjects//SPAMSVM//code//temp//train_labels.txt", train_labels)
-save("E://CodingProjects//SPAMSVM//code//temp//test_feature_matrix.txt", test_feature_matrix)
-save("E://CodingProjects//SPAMSVM//code//temp//test_labels.txt", test_labels)
+# save("E://CodingProjects//SPAMSVM//code//temp//features_matrix.txt", features_matrix)
+# save("E://CodingProjects//SPAMSVM//code//temp//train_labels.txt", train_labels)
+# save("E://CodingProjects//SPAMSVM//code//temp//test_feature_matrix.txt", test_feature_matrix)
+# save("E://CodingProjects//SPAMSVM//code//temp//test_labels.txt", test_labels)
 
 model = svm.SVC(kernel="rbf", C = 1)
 print("Training model.")
