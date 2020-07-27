@@ -44,31 +44,31 @@ def make_Dictionary(root_dir):
 
 
 
-def extract_features(mail_dir):
-    files = [os.path.join(mail_dir,fi) for fi in os.listdir(mail_dir)]
-    features_matrix = np.zeros((len(files),3000))
-    train_labels = np.zeros(len(files))
-    count = 0;
-    docID = 0;
-    for fil in files:
-      with open(fil) as fi:
-        for i,line in enumerate(fi):
-          if i == 2:
-            words = line.split()
-            for word in words:
-              wordID = 0
-              for i,d in enumerate(dictionary):
-                if d[0] == word:
-                  wordID = i
-                  features_matrix[docID,wordID] = words.count(word)
-        train_labels[docID] = 0;
-        filepathTokens = fil.split('/')
-        lastToken = filepathTokens[len(filepathTokens) - 1]
-        if lastToken.__contains__("spmsg"):
-            train_labels[docID] = 1;
-            count = count + 1
-        docID = docID + 1
-    return features_matrix, train_labels
+# def extract_features(mail_dir):
+#     files = [os.path.join(mail_dir,fi) for fi in os.listdir(mail_dir)]
+#     features_matrix = np.zeros((len(files),3000))
+#     train_labels = np.zeros(len(files))
+#     count = 0;
+#     docID = 0;
+#     for fil in files:
+#       with open(fil) as fi:
+#         for i,line in enumerate(fi):
+#           if i == 2:
+#             words = line.split()
+#             for word in words:
+#               wordID = 0
+#               for i,d in enumerate(dictionary):
+#                 if d[0] == word:
+#                   wordID = i
+#                   features_matrix[docID,wordID] = words.count(word)
+#         train_labels[docID] = 0;
+#         filepathTokens = fil.split('/')
+#         lastToken = filepathTokens[len(filepathTokens) - 1]
+#         if lastToken.__contains__("spmsg"):
+#             train_labels[docID] = 1;
+#             count = count + 1
+#         docID = docID + 1
+#     return features_matrix, train_labels
 
 
 
